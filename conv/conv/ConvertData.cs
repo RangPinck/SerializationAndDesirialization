@@ -30,9 +30,6 @@ namespace conv
         //переменная для обработки ошибок
         bool flag;
 
-        //списки структур
-        List<Place> places;
-        List<Programm> programms;
 
 
         //получение пути считывания
@@ -115,6 +112,8 @@ namespace conv
 
         public void ReadFile()
         {
+            
+
             if (flag)
             {
                 using (StreamReader file = new StreamReader(pathRead))
@@ -126,8 +125,9 @@ namespace conv
                 return;
         }
 
-        public void WriteFile()
+        public void WriteFile<T>(List<T> dataList)
         {
+
             if (flag)
             {
                 using (StreamWriter file = new StreamWriter(pathRead, false))
@@ -139,6 +139,19 @@ namespace conv
                 return;
         }
 
-
+        /// <summary>
+        /// Диалог выбора модели
+        /// </summary>
+        /// <returns>
+        /// индекс модели для switch
+        /// </returns>
+        int DialogGetModel()
+        {
+            Console.WriteLine("Выберите модель: ");
+            Console.WriteLine("1.Программы");
+            Console.WriteLine("2.Места");
+            Console.Write("Введите индекс выбраной вами модели: ");
+            return int.Parse(Console.ReadLine());
+        }
     }
 }
