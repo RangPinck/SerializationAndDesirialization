@@ -39,6 +39,20 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Xml.ReaderWriter": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "YamlDotNet": {
+              "target": "Package",
+              "version": "[15.1.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
