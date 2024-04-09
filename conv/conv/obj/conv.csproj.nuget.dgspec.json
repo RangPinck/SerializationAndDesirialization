@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Progect\\Convert\\conv\\conv\\conv.csproj": {}
+    "D:\\progect\\Convert\\conv\\conv\\conv.csproj": {}
   },
   "projects": {
-    "D:\\Progect\\Convert\\conv\\conv\\conv.csproj": {
+    "D:\\progect\\Convert\\conv\\conv\\conv.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Progect\\Convert\\conv\\conv\\conv.csproj",
+        "projectUniqueName": "D:\\progect\\Convert\\conv\\conv\\conv.csproj",
         "projectName": "conv",
-        "projectPath": "D:\\Progect\\Convert\\conv\\conv\\conv.csproj",
-        "packagesPath": "C:\\Users\\chern\\.nuget\\packages\\",
-        "outputPath": "D:\\Progect\\Convert\\conv\\conv\\obj\\",
+        "projectPath": "D:\\progect\\Convert\\conv\\conv\\conv.csproj",
+        "packagesPath": "C:\\Users\\BaX\\.nuget\\packages\\",
+        "outputPath": "D:\\progect\\Convert\\conv\\conv\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chern\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\BaX\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
