@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MDJUhSN3Yeu9Z4X0e3uKlpfKjFLHscjSMXq4CnNEquTa5ntoCjEIShLza/evrwMu4BbjT9zQV3n38O6S0/1yRQ==",
+  "dgSpecHash": "mhaivEkLZWI9j4vIAIUNcXiwl8K8xtiSguntq+KRbDJx16DBZk/CKTQGyNceU7Es2p7TPXbQ1TLQSVwyHRi2NA==",
   "success": true,
   "projectFilePath": "D:\\Progect\\Convert\\conv\\conv\\conv.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\chern\\.nuget\\packages\\csvhelper\\31.0.3\\csvhelper.31.0.3.nupkg.sha512",
     "C:\\Users\\chern\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\chern\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\chern\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
