@@ -1,15 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\progect\\Convert\\conv\\",
+  "WorkspaceRootPath": "D:\\Progect\\Convert\\conv\\",
   "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{1568CED6-0C84-4883-88C8-6A65960FA642}|conv\\conv.csproj|d:\\progect\\convert\\conv\\conv\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1568CED6-0C84-4883-88C8-6A65960FA642}|conv\\conv.csproj|solutionrelative:conv\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1568CED6-0C84-4883-88C8-6A65960FA642}|conv\\conv.csproj|d:\\progect\\convert\\conv\\conv\\serializationanddeserialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1568CED6-0C84-4883-88C8-6A65960FA642}|conv\\conv.csproj|solutionrelative:conv\\serializationanddeserialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
     {
       "AbsoluteMoniker": "D:0:0:{1568CED6-0C84-4883-88C8-6A65960FA642}|conv\\conv.csproj|d:\\progect\\convert\\conv\\conv\\convertdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1568CED6-0C84-4883-88C8-6A65960FA642}|conv\\conv.csproj|solutionrelative:conv\\convertdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -17,6 +9,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{1568CED6-0C84-4883-88C8-6A65960FA642}|conv\\conv.csproj|d:\\progect\\convert\\conv\\conv\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1568CED6-0C84-4883-88C8-6A65960FA642}|conv\\conv.csproj|solutionrelative:conv\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1568CED6-0C84-4883-88C8-6A65960FA642}|conv\\conv.csproj|d:\\progect\\convert\\conv\\conv\\serializationanddeserialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1568CED6-0C84-4883-88C8-6A65960FA642}|conv\\conv.csproj|solutionrelative:conv\\serializationanddeserialization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1568CED6-0C84-4883-88C8-6A65960FA642}|conv\\conv.csproj|d:\\progect\\convert\\conv\\conv\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1568CED6-0C84-4883-88C8-6A65960FA642}|conv\\conv.csproj|solutionrelative:conv\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,53 +29,57 @@
           "SelectedChildIndex": 3,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "SerializationAndDeserialization.cs",
-              "DocumentMoniker": "D:\\progect\\Convert\\conv\\conv\\SerializationAndDeserialization.cs",
+              "DocumentMoniker": "D:\\Progect\\Convert\\conv\\conv\\SerializationAndDeserialization.cs",
               "RelativeDocumentMoniker": "conv\\SerializationAndDeserialization.cs",
-              "ToolTip": "D:\\progect\\Convert\\conv\\conv\\SerializationAndDeserialization.cs",
+              "ToolTip": "D:\\Progect\\Convert\\conv\\conv\\SerializationAndDeserialization.cs",
               "RelativeToolTip": "conv\\SerializationAndDeserialization.cs",
-              "ViewState": "AQIAAAgAAADAmZmZmZkTwBQAAAAtAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-09T20:38:10.696Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Models.cs",
-              "DocumentMoniker": "D:\\progect\\Convert\\conv\\conv\\Models.cs",
+              "DocumentMoniker": "D:\\Progect\\Convert\\conv\\conv\\Models.cs",
               "RelativeDocumentMoniker": "conv\\Models.cs",
-              "ToolTip": "D:\\progect\\Convert\\conv\\conv\\Models.cs",
+              "ToolTip": "D:\\Progect\\Convert\\conv\\conv\\Models.cs",
               "RelativeToolTip": "conv\\Models.cs",
-              "ViewState": "AQIAAAAAAABoZmZmZmYUwAgAAAAOAAAA",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAcwA8AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-09T08:36:39.791Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ConvertData.cs",
-              "DocumentMoniker": "D:\\progect\\Convert\\conv\\conv\\ConvertData.cs",
+              "DocumentMoniker": "D:\\Progect\\Convert\\conv\\conv\\ConvertData.cs",
               "RelativeDocumentMoniker": "conv\\ConvertData.cs",
-              "ToolTip": "D:\\progect\\Convert\\conv\\conv\\ConvertData.cs",
+              "ToolTip": "D:\\Progect\\Convert\\conv\\conv\\ConvertData.cs",
               "RelativeToolTip": "conv\\ConvertData.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJsAAABcAAAA",
+              "ViewState": "AQIAAF4AAAAAAAAAAAA1wKMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-05T19:30:23.359Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\progect\\Convert\\conv\\conv\\Program.cs",
+              "DocumentMoniker": "D:\\Progect\\Convert\\conv\\conv\\Program.cs",
               "RelativeDocumentMoniker": "conv\\Program.cs",
-              "ToolTip": "D:\\progect\\Convert\\conv\\conv\\Program.cs",
+              "ToolTip": "D:\\Progect\\Convert\\conv\\conv\\Program.cs",
               "RelativeToolTip": "conv\\Program.cs",
-              "ViewState": "AQIAAA4AAABAzczMzMwmwBwAAAAkAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-05T19:58:00.736Z",
               "EditorCaption": ""

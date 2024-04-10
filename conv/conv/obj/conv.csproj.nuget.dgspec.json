@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\progect\\Convert\\conv\\conv\\conv.csproj": {}
+    "D:\\Progect\\Convert\\conv\\conv\\conv.csproj": {}
   },
   "projects": {
-    "D:\\progect\\Convert\\conv\\conv\\conv.csproj": {
+    "D:\\Progect\\Convert\\conv\\conv\\conv.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\progect\\Convert\\conv\\conv\\conv.csproj",
+        "projectUniqueName": "D:\\Progect\\Convert\\conv\\conv\\conv.csproj",
         "projectName": "conv",
-        "projectPath": "D:\\progect\\Convert\\conv\\conv\\conv.csproj",
-        "packagesPath": "C:\\Users\\BaX\\.nuget\\packages\\",
-        "outputPath": "D:\\progect\\Convert\\conv\\conv\\obj\\",
+        "projectPath": "D:\\Progect\\Convert\\conv\\conv\\conv.csproj",
+        "packagesPath": "C:\\Users\\chern\\.nuget\\packages\\",
+        "outputPath": "D:\\Progect\\Convert\\conv\\conv\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\BaX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chern\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -76,19 +76,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.17, 7.0.17]"
+              "version": "[7.0.18, 7.0.18]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[7.0.17, 7.0.17]"
+              "version": "[7.0.18, 7.0.18]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.17, 7.0.17]"
+              "version": "[7.0.18, 7.0.18]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.17, 7.0.17]"
+              "version": "[7.0.18, 7.0.18]"
             }
           ],
           "frameworkReferences": {
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -18,6 +18,9 @@ namespace conv
         public string street { set; get; }
         public string house { set; get; }
 
+        /// <summary>
+        /// метод преобразования данных в строку для записи в файл/вывода
+        /// </summary>
         public void PrintData()
         {
             Console.WriteLine( $"{country} {city} {street} {house}");
@@ -32,6 +35,10 @@ namespace conv
         public string title { set; get; }
         public string versoin { set; get; }
         public string dataReilese { set; get; }
+
+        /// <summary>
+        /// метод преобразования данных в строку для записи в файл/вывода
+        /// </summary>
         public void PrintData()
         {
             Console.WriteLine($"{title} {versoin} {dataReilese}");

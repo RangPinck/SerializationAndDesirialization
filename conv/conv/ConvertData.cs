@@ -67,12 +67,10 @@ namespace conv
                 switch (GetModelNumberForSwith())
                 {
                     case 1:
-                        List<Program> programs = new List<Program>();
-                        ReadModelFromFile<Program>(programs);
+                        ReadModelFromFile(new List<Program>());
                         break;
                     case 2:
-                        List<Place> places = new List<Place>();
-                        ReadModelFromFile<Place>(places);
+                        ReadModelFromFile(new List<Place>());
                         break;
                     default:
                         Console.WriteLine("Выбранного вами варианта нет! Перезапустите программу для повторного ввода");
@@ -149,12 +147,10 @@ namespace conv
                 switch (GetModelNumberForSwith())
                 {
                     case 1:
-                        List<Program> programs = new List<Program>(); //метод для создания списка 
-                        ReadModelFromFile(programs);
+                        WriteModelFromFile(GetListPrograms());
                         break;
                     case 2:
-                        List<Place> places = new List<Place>(); //метод для создания списка 
-                        ReadModelFromFile(places);
+                        WriteModelFromFile(GetListPlaces());
                         break;
                     default:
                         Console.WriteLine("Выбранного вами варианта нет! Перезапустите программу для повторного ввода");
@@ -165,6 +161,103 @@ namespace conv
             {
                 Console.WriteLine("Файл не того формата, который невозможно обработать с помощью даннй программы!\nПроверьте формат файла!");
             }
+        }
+
+        /// <summary>
+        /// метод записи с файла уже определённого формата модели
+        /// </summary>
+        /// <typeparam name="T">тип данных модели - созданной структуры</typeparam>
+        /// <param name="model">список, откуда будут браться  данные для записи </param>
+        void WriteModelFromFile<T>(List<T> model)
+        {
+            SerializationAndDeserialization ser = new SerializationAndDeserialization();
+            switch (GetFormatFileOfPath())
+            {
+                //чтение данных с csv
+                case "csv":
+                    ser.CSVWrite(model);
+                    break;
+                //чтение данных с json
+                case "json":
+                    ser.JSONWrite(model);
+                    break;
+                //чтение данных с xml
+                case "xml":
+                    ser.XMLWrite(model);
+                    break;
+                //чтение данных с yaml
+                case "yaml":
+                    ser.YAMLWrite(model);
+                    break;
+            }
+
+        }
+
+        /// <summary>
+        /// Метод получения данных для списка записей стурктуры Programm
+        /// </summary>
+        /// <returns>
+        /// Список записей структуры
+        /// </returns>
+        public List<Programm> GetListPrograms()
+        {
+            List<Programm> list = new List<Programm>();
+            Programm programm = new Programm();
+            int flag = 0;
+
+            Console.WriteLine("Для заполнения списка модели данными следуйте инструкциям.");
+            Console.WriteLine("Нажмите любую клавишу, чтобы продолжить ...");
+            Console.ReadKey();
+            Console.Clear();
+            do
+            {
+                Console.Write("Введите название программы:");
+                programm.title = Console.ReadLine();
+                Console.Write("Введите версию программы:");
+                programm.versoin = Console.ReadLine();
+                Console.Write("Введите дату релиза программы строкой по шаблону [yyyy.mm.dd] программы:");
+                programm.dataReilese = Console.ReadLine();
+
+                list.Add(programm);
+                Console.WriteLine("Запись создана!\nХотите продолжить ввод?\nДа - 1..9\nНет - 0");
+                flag = int.Parse(Console.ReadLine());
+            } while (Convert.ToBoolean(flag));
+
+            return list;
+        }
+
+        /// <summary>
+        /// Метод получения данных для списка записей стурктуры Place
+        /// </summary>
+        /// <returns>
+        /// Список записей структуры
+        /// </returns>
+        public List<Place> GetListPlaces()
+        {
+            List<Place> list = new List<Place>();
+            Place place = new Place();
+            int flag = 0;
+
+            Console.WriteLine("Для заполнения списка модели данными следуйте инструкциям.");
+            Console.WriteLine("Нажмите любую клавишу, чтобы продолжить ...");
+            Console.ReadKey();
+            Console.Clear();
+            do
+            {
+                Console.Write("Введите название страны:");
+                place.country = Console.ReadLine();
+                Console.Write("Введите название города:");
+                place.country = Console.ReadLine();
+                Console.Write("Введите название улицы:");
+                place.country = Console.ReadLine();
+                Console.Write("Введите номер дома:");
+                place.country = Console.ReadLine();
+                list.Add(place);
+                Console.WriteLine("Запись создана!\nХотите продолжить ввод?\nДа - 1..9\nНет - 0");
+                flag = int.Parse(Console.ReadLine());
+            } while (Convert.ToBoolean(flag));
+
+            return list;
         }
     }
 }
