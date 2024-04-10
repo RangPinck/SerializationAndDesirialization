@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -67,10 +68,10 @@ namespace conv
                 switch (GetModelNumberForSwith())
                 {
                     case 1:
-                        ReadModelFromFile(new List<Program>());
+                        List<Programm> program = ReadModelFromFile(new List<Programm>());
                         break;
                     case 2:
-                        ReadModelFromFile(new List<Place>());
+                        List<Place> place =  ReadModelFromFile(new List<Place>());
                         break;
                     default:
                         Console.WriteLine("Выбранного вами варианта нет! Перезапустите программу для повторного ввода");
@@ -112,29 +113,30 @@ namespace conv
         /// </summary>
         /// <typeparam name="T">тип данных модели - созданной структуры</typeparam>
         /// <param name="model">список, куда данные будут записываться для последующего вывода</param>
-        void ReadModelFromFile<T>(List<T> model)
+        List<T> ReadModelFromFile<T>(List<T> model)
         {
             SerializationAndDeserialization ser = new SerializationAndDeserialization();
             switch (GetFormatFileOfPath())
             {
                 //чтение данных с csv
                 case "csv":
-                    ser.CSVRead(model);
+                    model = ser.CSVRead(model, PathToFile);
                     break;
                 //чтение данных с json
                 case "json":
-                    ser.JSONRead(model);
+                    model = ser.JSONRead(model, PathToFile);
                     break;
                 //чтение данных с xml
                 case "xml":
-                    ser.XMLRead(model);
+                    model = ser.XMLRead(model, PathToFile);
                     break;
                 //чтение данных с yaml
                 case "yaml":
-                    ser.YAMLRead(model);
+                    model = ser.YAMLRead(model, PathToFile);
                     break;
             }
 
+            return model;
         }
 
         /// <summary>
@@ -147,6 +149,11 @@ namespace conv
                 switch (GetModelNumberForSwith())
                 {
                     case 1:
+                        if (GetListPrograms().Count == 0)
+                        {
+                            Console.WriteLine("В ведённых данных ошибка! Повторите ввод данных!");
+                            return;
+                        }
                         WriteModelFromFile(GetListPrograms());
                         break;
                     case 2:
@@ -175,19 +182,19 @@ namespace conv
             {
                 //чтение данных с csv
                 case "csv":
-                    ser.CSVWrite(model);
+                    ser.CSVWrite(model, PathToFile);
                     break;
                 //чтение данных с json
                 case "json":
-                    ser.JSONWrite(model);
+                    ser.JSONWrite(model, PathToFile);
                     break;
                 //чтение данных с xml
                 case "xml":
-                    ser.XMLWrite(model);
+                    ser.XMLWrite(model, PathToFile);
                     break;
                 //чтение данных с yaml
                 case "yaml":
-                    ser.YAMLWrite(model);
+                    ser.YAMLWrite(model, PathToFile);
                     break;
             }
 
@@ -204,6 +211,7 @@ namespace conv
             List<Programm> list = new List<Programm>();
             Programm programm = new Programm();
             int flag = 0;
+            bool flagError = false;
 
             Console.WriteLine("Для заполнения списка модели данными следуйте инструкциям.");
             Console.WriteLine("Нажмите любую клавишу, чтобы продолжить ...");
@@ -211,17 +219,28 @@ namespace conv
             Console.Clear();
             do
             {
-                Console.Write("Введите название программы:");
+                Console.Write("Введите название программы: ");
                 programm.title = Console.ReadLine();
-                Console.Write("Введите версию программы:");
+                Console.Write("Введите версию программы: ");
                 programm.versoin = Console.ReadLine();
-                Console.Write("Введите дату релиза программы строкой по шаблону [yyyy.mm.dd] программы:");
-                programm.dataReilese = Console.ReadLine();
-
-                list.Add(programm);
-                Console.WriteLine("Запись создана!\nХотите продолжить ввод?\nДа - 1..9\nНет - 0");
+                Console.Write("Введите дату релиза программы строкой по шаблону [yyyy.mm.dd] программы: ");
+                string dateTemplate = Console.ReadLine();
+                //проверка на правильность ввода даты
+                if (programm.CheckingTheCorrectnessOfTheDate(dateTemplate))
+                {
+                    flagError = true;
+                    break;
+                }
+                programm.dataReilese = dateTemplate;
+                list.Add(programm);                
+                Console.Write("Запись создана!\nХотите продолжить ввод?\nДа - 1..9\nНет - 0\nВведите цифру в соответствии с выбранным вариантом: ");
                 flag = int.Parse(Console.ReadLine());
             } while (Convert.ToBoolean(flag));
+
+            if (flagError)
+            {
+                return new List<Programm>();
+            }
 
             return list;
         }
@@ -244,16 +263,16 @@ namespace conv
             Console.Clear();
             do
             {
-                Console.Write("Введите название страны:");
+                Console.Write("Введите название страны: ");
                 place.country = Console.ReadLine();
-                Console.Write("Введите название города:");
+                Console.Write("Введите название города: ");
                 place.country = Console.ReadLine();
-                Console.Write("Введите название улицы:");
+                Console.Write("Введите название улицы: ");
                 place.country = Console.ReadLine();
-                Console.Write("Введите номер дома:");
+                Console.Write("Введите номер дома: ");
                 place.country = Console.ReadLine();
                 list.Add(place);
-                Console.WriteLine("Запись создана!\nХотите продолжить ввод?\nДа - 1..9\nНет - 0");
+                Console.WriteLine("Запись создана!\nХотите продолжить ввод?\nДа - 1..9\nНет - 0\nВведите цифру в соответствии с выбранным вариантом: ");
                 flag = int.Parse(Console.ReadLine());
             } while (Convert.ToBoolean(flag));
 
