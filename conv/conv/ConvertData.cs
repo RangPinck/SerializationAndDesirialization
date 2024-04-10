@@ -71,7 +71,7 @@ namespace conv
                         List<Programm> program = ReadModelFromFile(new List<Programm>());
                         break;
                     case 2:
-                        List<Place> place =  ReadModelFromFile(new List<Place>());
+                        List<Place> place = ReadModelFromFile(new List<Place>());
                         break;
                     default:
                         Console.WriteLine("Выбранного вами варианта нет! Перезапустите программу для повторного ввода");
@@ -149,12 +149,13 @@ namespace conv
                 switch (GetModelNumberForSwith())
                 {
                     case 1:
-                        if (GetListPrograms().Count == 0)
+                        List<Programm> template = GetListPrograms();
+                        if (template.Count == 0)
                         {
                             Console.WriteLine("В ведённых данных ошибка! Повторите ввод данных!");
                             return;
                         }
-                        WriteModelFromFile(GetListPrograms());
+                        WriteModelFromFile(template);
                         break;
                     case 2:
                         WriteModelFromFile(GetListPlaces());
@@ -180,19 +181,19 @@ namespace conv
             SerializationAndDeserialization ser = new SerializationAndDeserialization();
             switch (GetFormatFileOfPath())
             {
-                //чтение данных с csv
+                //запись данных в csv
                 case "csv":
                     ser.CSVWrite(model, PathToFile);
                     break;
-                //чтение данных с json
+                //запись данных в json
                 case "json":
                     ser.JSONWrite(model, PathToFile);
                     break;
-                //чтение данных с xml
+                //запись данных в xml
                 case "xml":
                     ser.XMLWrite(model, PathToFile);
                     break;
-                //чтение данных с yaml
+                //запись данных в yaml
                 case "yaml":
                     ser.YAMLWrite(model, PathToFile);
                     break;
@@ -232,10 +233,10 @@ namespace conv
                     break;
                 }
                 programm.dataReilese = dateTemplate;
-                list.Add(programm);                
+                list.Add(programm);
                 Console.Write("Запись создана!\nХотите продолжить ввод?\nДа - 1..9\nНет - 0\nВведите цифру в соответствии с выбранным вариантом: ");
                 flag = int.Parse(Console.ReadLine());
-            } while (Convert.ToBoolean(flag));
+            } while (flag != 0);
 
             if (flagError)
             {

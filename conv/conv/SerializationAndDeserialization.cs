@@ -5,6 +5,8 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace conv
 {
@@ -62,6 +64,9 @@ namespace conv
         public List<T> XMLRead<T>(List<T> model, string filePath)
         {
             List<T> result = new List<T>();
+            using StreamReader file = new StreamReader(filePath);
+            XmlSerializer serializer = new XmlSerializer(typeof(List<T>));
+            result = (List<T>)serializer.Deserialize(file);
 
             Console.WriteLine("Данные считаны!");
             return result;
@@ -126,6 +131,17 @@ namespace conv
         /// <param name="filePath">путь к файлу для записи</param>
         public void XMLWrite<T>(List<T> model, string filePath)
         {
+            //List<T> result = new List<T>();
+            //using StreamWriter file = new StreamWriter(filePath);
+            //XmlSerializer serializer = new XmlSerializer(typeof(List<T>));
+            //serializer.Serialize(file, model);
+
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<T>));
+            using (FileStream fs = new FileStream(filePath, FileMode.Create))
+            {
+                xmlSerializer.Serialize(fs, model);
+            }
+
             Console.WriteLine("Данные записаны!");
         }
 
