@@ -69,9 +69,11 @@ namespace conv
                 {
                     case 1:
                         List<Programm> program = ReadModelFromFile(new List<Programm>());
+                        //метод сортировки
                         break;
                     case 2:
                         List<Place> place = ReadModelFromFile(new List<Place>());
+                        //метод сортировки
                         break;
                     default:
                         Console.WriteLine("Выбранного вами варианта нет! Перезапустите программу для повторного ввода");
