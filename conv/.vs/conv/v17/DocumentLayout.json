@@ -40,9 +40,10 @@
               "RelativeDocumentMoniker": "conv\\Models.cs",
               "ToolTip": "D:\\Progect\\Convert\\conv\\conv\\Models.cs",
               "RelativeToolTip": "conv\\Models.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwCIAAAAKAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAswBwAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T21:39:44.856Z"
+              "WhenOpened": "2024-04-10T21:39:44.856Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -52,9 +53,10 @@
               "RelativeDocumentMoniker": "conv\\SerializationAndDeserialization.cs",
               "ToolTip": "D:\\Progect\\Convert\\conv\\conv\\SerializationAndDeserialization.cs",
               "RelativeToolTip": "conv\\SerializationAndDeserialization.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAYwIMAAAAcAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAgwIMAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-10T21:04:02.104Z"
+              "WhenOpened": "2024-04-10T21:04:02.104Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -64,7 +66,7 @@
               "RelativeDocumentMoniker": "conv\\ConvertData.cs",
               "ToolTip": "D:\\Progect\\Convert\\conv\\conv\\ConvertData.cs",
               "RelativeToolTip": "conv\\ConvertData.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAE0AAAAcAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAgwAsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-05T19:30:23.359Z",
               "EditorCaption": ""
@@ -79,7 +81,8 @@
               "RelativeToolTip": "conv\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T19:58:00.736Z"
+              "WhenOpened": "2024-04-05T19:58:00.736Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -151,16 +151,38 @@ namespace conv
                 switch (GetModelNumberForSwith())
                 {
                     case 1:
-                        List<Programm> template = GetListPrograms();
-                        if (template.Count == 0)
+                        Console.Write("Выюерите тип заполнения данными:\n1. Ручной ввод\n2. Тестовые готовые данные\nИндекс вашего выбора: ");
+                        int variosProgramm = int.Parse(Console.ReadLine());
+                        List<Programm> templateProgramm = new List<Programm>();
+
+                        switch (variosProgramm)
+                        {
+                            case 1:
+                                templateProgramm = GetListPrograms(); break;
+                            case 2:
+                                templateProgramm = ListProgrammForTest(); break;
+                        }
+
+                        if (templateProgramm.Count == 0)
                         {
                             Console.WriteLine("В ведённых данных ошибка! Повторите ввод данных!");
                             return;
                         }
-                        WriteModelFromFile(template);
+                        WriteModelFromFile(templateProgramm);
                         break;
                     case 2:
-                        WriteModelFromFile(GetListPlaces());
+                        Console.Write("Выюерите тип заполнения данными:\n1. Ручной ввод\n2. Тестовые готовые данные\nИндекс вашего выбора: ");
+                        int variosPlace = int.Parse(Console.ReadLine());
+                        List<Place> templatePlace = new List<Place>();
+
+                        switch (variosPlace)
+                        {
+                            case 1:
+                                templatePlace = GetListPlaces(); break;
+                            case 2:
+                                templatePlace = ListPlacesForTest(); break;
+                        }
+                        WriteModelFromFile(templatePlace);
                         break;
                     default:
                         Console.WriteLine("Выбранного вами варианта нет! Перезапустите программу для повторного ввода");
@@ -278,6 +300,73 @@ namespace conv
                 Console.WriteLine("Запись создана!\nХотите продолжить ввод?\nДа - 1..9\nНет - 0\nВведите цифру в соответствии с выбранным вариантом: ");
                 flag = int.Parse(Console.ReadLine());
             } while (Convert.ToBoolean(flag));
+
+            return list;
+        }
+
+        /// <summary>
+        /// Метод возвращающий список тестовых данных модели "Место"
+        /// </summary>
+        /// <returns>
+        /// список тестовых данных модели "Место"
+        /// </returns>
+        public List<Place> ListPlacesForTest()
+        {
+            List<Place> list = new List<Place>();
+
+            list.Add(new Place()
+            {
+                country = "Japan",
+                city = "Tokio",
+                street = "Hayao Miyazaki",
+                house = "19A"
+            });
+            list.Add(new Place()
+            {
+                country = "Russia",
+                city = "Moskow",
+                street = "Lenins",
+                house = "20b/2"
+            });
+            list.Add(new Place()
+            {
+                country = "Germany",
+                city = "Luxembourg",
+                street = "Arlon",
+                house = "7g"
+            });
+
+            return list;
+        }
+
+        /// <summary>
+        /// Метод возвращающий список тестовых данных модели "Программа"
+        /// </summary>
+        /// <returns>
+        /// список тестовых данных модели "Программа"
+        /// </returns>
+        public List<Programm> ListProgrammForTest()
+        {
+            List<Programm> list = new List<Programm>();
+
+            list.Add(new Programm()
+            {
+                title = "Word",
+                versoin = "1.0",
+                dataReilese = "2010.01.01"
+            });
+            list.Add(new Programm()
+            {
+                title = "Exel",
+                versoin = "2.05",
+                dataReilese = "2013.04.01"
+            });
+            list.Add(new Programm()
+            {
+                title = "Power Point",
+                versoin = "7.103",
+                dataReilese = "2016.07.15"
+            });
 
             return list;
         }
