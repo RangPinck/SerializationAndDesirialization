@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
+using YamlDotNet.Serialization;
 
 namespace conv
 {
-    //сделать проверку на запись даты
 
     class SerializationAndDeserialization
     {
@@ -46,10 +47,11 @@ namespace conv
         /// </returns>
         public List<T> YAMLRead<T>(List<T> model, string filePath)
         {
-            List<T> result = new List<T>();
-
+            string text = File.ReadAllText(filePath);
+            var deserializer = new DeserializerBuilder().Build();
+            model = deserializer.Deserialize<List<T>>(text);
             Console.WriteLine("Данные считаны!");
-            return result;
+            return model;
         }
 
         /// <summary>
@@ -63,13 +65,11 @@ namespace conv
         /// </returns>
         public List<T> XMLRead<T>(List<T> model, string filePath)
         {
-            List<T> result = new List<T>();
             using StreamReader file = new StreamReader(filePath);
             XmlSerializer serializer = new XmlSerializer(typeof(List<T>));
-            result = (List<T>)serializer.Deserialize(file);
-
+            model = serializer.Deserialize(file) as List<T>;
             Console.WriteLine("Данные считаны!");
-            return result;
+            return model;
         }
 
 
@@ -84,10 +84,20 @@ namespace conv
         /// </returns>
         public List<T> JSONRead<T>(List<T> model, string filePath)
         {
-            List<T> result = new List<T>();
+            string dataJson = "";
+            dataJson = File.ReadAllText(filePath);
+            if (dataJson.Contains("["))
+            {
+                model = JsonSerializer.Deserialize<List<T>>(dataJson);
+            }
+            else
+            {
+                var strData = JsonSerializer.Deserialize<T>(dataJson);
+                model.Add(strData);
+            }
 
             Console.WriteLine("Данные считаны!");
-            return result;
+            return model;
         }
 
         /// <summary>
@@ -120,6 +130,9 @@ namespace conv
         /// <param name="filePath">путь к файлу для записи</param>
         public void YAMLWrite<T>(List<T> model, string filePath)
         {
+            var yamlser = new SerializerBuilder().Build();
+            var yaml = yamlser.Serialize(model);
+            File.WriteAllText(filePath, yaml);
             Console.WriteLine("Данные записаны!");
         }
 
@@ -131,16 +144,10 @@ namespace conv
         /// <param name="filePath">путь к файлу для записи</param>
         public void XMLWrite<T>(List<T> model, string filePath)
         {
-            //List<T> result = new List<T>();
-            //using StreamWriter file = new StreamWriter(filePath);
-            //XmlSerializer serializer = new XmlSerializer(typeof(List<T>));
-            //serializer.Serialize(file, model);
-
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<T>));
-            using (FileStream fs = new FileStream(filePath, FileMode.Create))
-            {
-                xmlSerializer.Serialize(fs, model);
-            }
+            List<T> result = new List<T>();
+            using StreamWriter file = new StreamWriter(filePath);
+            XmlSerializer serializer = new XmlSerializer(typeof(List<T>));
+            serializer.Serialize(file, model);
 
             Console.WriteLine("Данные записаны!");
         }
@@ -153,6 +160,8 @@ namespace conv
         /// <param name="filePath">путь к файлу для записи</param>
         public void JSONWrite<T>(List<T> model, string filePath)
         {
+            using FileStream file = new FileStream(filePath, FileMode.Create);
+            JsonSerializer.Serialize(file, model);
             Console.WriteLine("Данные записаны!");
         }
     }

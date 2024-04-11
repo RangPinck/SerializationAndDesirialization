@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ArrayOfProgramm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Programm>
-    <title>word</title>
-    <versoin>0.1</versoin>
-    <dataReilese>2012.11.01</dataReilese>
-  </Programm>
-</ArrayOfProgramm>

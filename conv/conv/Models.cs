@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using YamlDotNet.Core.Tokens;
 
+
 namespace conv
 {
     /// <summary>
     /// Место: страна, город, улица, дом
     /// </summary>
-    public struct Place
+    public class Place
     {
         public string country { set; get; }
         public string city { set; get; }
@@ -32,7 +33,7 @@ namespace conv
     /// <summary>
     /// Программа: название, версия, дата релиза
     /// </summary>
-    public struct Programm
+    public class Programm
     {
         public string title { set; get; }
         public string versoin { set; get; }
