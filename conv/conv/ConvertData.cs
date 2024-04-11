@@ -69,11 +69,11 @@ namespace conv
                 {
                     case 1:
                         List<Programm> program = ReadModelFromFile(new List<Programm>());
-                        //метод сортировки
+                        SorstAndSerchGetsModel(program);
                         break;
                     case 2:
                         List<Place> place = ReadModelFromFile(new List<Place>());
-                        //метод сортировки
+                        SorstAndSerchGetsModel(place);
                         break;
                     default:
                         Console.WriteLine("Выбранного вами варианта нет! Перезапустите программу для повторного ввода");
@@ -369,6 +369,255 @@ namespace conv
             });
 
             return list;
+        }
+
+        /// <summary>
+        /// Метод работы с полученным списком: сортировки и поиска данных
+        /// </summary>
+        /// <param name="program">список модели "Programm"</param>
+        void SorstAndSerchGetsModel(List<Programm> model)
+        {
+            Console.Write("Выберите действие с полученным списком:\n1.Показать\n2.Отсортировать и вывести\n3.Поиск по тексту\n4.Выход (Список полученных данных всё равно будет выведен)\nИндекс вашего выбора: ");
+            try
+            {
+                int varios = int.Parse(Console.ReadLine());
+                switch (varios)
+                {
+                    case 1:
+                        FullPrint(model);
+                        break;
+                    case 2:
+                        SortList(model);
+                        break;
+                    case 3:
+                        SearchList(model);
+                        break;
+                    case 4:
+                        FullPrint(model);
+                        return;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Выбранного варианта нет!");
+                        SorstAndSerchGetsModel(model);
+                        break;
+                }
+                Console.WriteLine("Нажимте любую клавигшу для продолжения...");
+                Console.ReadKey();
+                Console.Clear();
+                SorstAndSerchGetsModel(model);
+            }
+            catch
+            {
+                Console.WriteLine("Вы ввели не вернуй символ! повторите ввод!");
+                Console.WriteLine("Нажимте любую клавигшу для продолжения...");
+                Console.ReadKey();
+                Console.Clear();
+                SorstAndSerchGetsModel(model);
+            }
+        }
+
+        /// <summary>
+        /// Метод для полноценного вывода списка "Programm"
+        /// </summary>
+        /// <param name="model">список тип "Programm"</param>
+        void FullPrint(List<Programm> model)
+        {
+            Console.WriteLine("Назвение\tВерсия\tДата релиза:");
+            foreach (var item in model)
+            {
+                Console.WriteLine(item.PrintData());
+            }
+        }
+
+        /// <summary>
+        /// Сортировка списка тип "Programm" по выбранным параметрам
+        /// </summary>
+        /// <param name="model">список типа "Programm"</param>
+        void SortList(List<Programm> model)
+        {
+            Console.Write("Выберите метод сортировки:\n1.По названию\n2.По версии\n3.По дате релиза\n4.Выход\nИндекс вашего выбора: ");
+            try
+            {
+                int varios = int.Parse(Console.ReadLine());
+                switch (varios)
+                {
+                    case 1:
+                        model = model.OrderBy(mod => mod.title).ToList();
+                        break;
+                    case 2:
+                        model = model.OrderBy(mod => mod.versoin).ToList();
+                        break;
+                    case 3:
+                        model = model.OrderBy(mod => mod.dataReilese).ToList();
+                        break;
+                    case 4:
+                        return;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Выбранного варианта нет!");
+                        SortList(model);
+                        break;
+                }
+
+            }
+            catch
+            {
+                Console.WriteLine("Вы ввели не вернуй символ! повторите ввод!");
+                Console.WriteLine("Нажимте любую клавигшу для продолжения...");
+                Console.ReadKey();
+                Console.Clear();
+                SortList(model);
+            }
+
+            FullPrint(model);
+        }
+
+        /// <summary>
+        /// Метод поиска по списку типа "Programm"
+        /// </summary>
+        /// <param name="model">список типа "Programm"</param>
+        void SearchList(List<Programm> model)
+        {
+            Console.Write("Введите часть фразы/текста/строки которые хотите найти (строчными буквами, иначе результат будет пустой): ");
+            string str = Console.ReadLine();
+            model = model.Where(mod => mod.PrintData().Replace("\t", "").ToString().ToLower().IndexOf(str) != -1).ToList();
+            FullPrint(model);
+        }
+
+        /// <summary>
+        /// Метод работы с полученным списком: сортировки и поиска данных
+        /// </summary>
+        /// <param name="program">список модели "Programm"</param>
+        void SorstAndSerchGetsModel(List<Place> model)
+        {
+            Console.Write("Выберите действие с полученным списком:\n1.Показать\n2.Отсортировать и вывести\n3.Поиск по тексту\n4.Выход (Список полученных данных всё равно будет выведен)\nИндекс вашего выбора: ");
+            try
+            {
+                int varios = int.Parse(Console.ReadLine());
+                switch (varios)
+                {
+                    case 1:
+                        FullPrint(model);
+                        break;
+                    case 2:
+                        SortList(model);
+                        break;
+                    case 3:
+                        SearchList(model);
+                        break;
+                    case 4:
+                        FullPrint(model);
+                        return;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Выбранного варианта нет!");
+                        SorstAndSerchGetsModel(model);
+                        break;
+                }
+                Console.WriteLine("Нажимте любую клавигшу для продолжения...");
+                Console.ReadKey();
+                Console.Clear();
+                SorstAndSerchGetsModel(model);
+            }
+            catch
+            {
+                Console.WriteLine("Вы ввели не вернуй символ! повторите ввод!");
+                Console.WriteLine("Нажимте любую клавигшу для продолжения...");
+                Console.ReadKey();
+                Console.Clear();
+                SorstAndSerchGetsModel(model);
+            }
+        }
+
+        /// <summary>
+        /// Метод для полноценного вывода списка "Place"
+        /// </summary>
+        /// <param name="model">список тип "Place"</param>
+        void FullPrint(List<Place> model)
+        {
+            Console.WriteLine("Страна\tГород\tУлица\tДом:");
+            foreach (var item in model)
+            {
+                Console.WriteLine(item.PrintData());
+            }
+        }
+
+        /// <summary>
+        /// Сортировка списка тип "Place" по выбранным параметрам
+        /// </summary>
+        /// <param name="model">список типа "Place"</param>
+        void SortList(List<Place> model)
+        {
+            Console.Write("Выберите метод сортировки:\n1.По стране\n2.По городу\n3.По улице\n4.По дому\n5.Выход\nИндекс вашего выбора: ");
+            try
+            {
+                int varios = int.Parse(Console.ReadLine());
+                switch (varios)
+                {
+                    case 1:
+                        model = model.OrderBy(mod => mod.country).ToList();
+                        break;
+                    case 2:
+                        model = model.OrderBy(mod => mod.city).ToList();
+                        break;
+                    case 3:
+                        model = model.OrderBy(mod => mod.street).ToList();
+                        break;
+                    case 4:
+                        model = model.OrderBy(mod => mod.house).ToList();
+                        break;
+                    case 5:
+                        return;
+                    default:
+                        Console.Clear();
+                        Console.WriteLine("Выбранного варианта нет!");
+                        SortList(model);
+                        break;
+                }
+
+            }
+            catch
+            {
+                Console.WriteLine("Вы ввели не вернуй символ! повторите ввод!");
+                Console.WriteLine("Нажимте любую клавигшу для продолжения...");
+                Console.ReadKey();
+                Console.Clear();
+                SortList(model);
+            }
+
+            FullPrint(model);
+        }
+
+        /// <summary>
+        /// Метод поиска по списку типа "Place"
+        /// </summary>
+        /// <param name="model">список типа "Place"</param>
+        void SearchList(List<Place> model)
+        {
+            Console.Write("Введите часть фразы/текста/строки которые хотите найти (строчными буквами, иначе результат будет пустой): ");
+            string str = Console.ReadLine();
+            model = model.Where(mod => mod.PrintData().Replace("\t", "").ToString().ToLower().IndexOf(str) != -1).ToList();
+            FullPrint(model);
+        }
+
+        /// <summary>
+        /// Метод для отображения для пользователя что такое модель и какие есть в данной программе
+        /// </summary>
+        public void viewModelsForUsers()
+        {
+            Console.WriteLine("\nМодель - это тип записи данных о каком-то объекте\n");
+            Console.WriteLine("В данном проекте реализованы 2 модели: \"Место\" и \"Программа\"");
+            Console.WriteLine("\n\t==\t==\t==\t==\t==\t==\n");
+            Console.Write("\t\t");
+            Console.WriteLine("Модель \"Программа\"\nСостоит из:\n\t1. Название программы\n\t2. Версии\n\t3. Даты рализа - даты публикции программы, которая записывается по шаблону [yyyy.mm.dd],\t\n где \"y\" - цифра года, \"m\" - цифра месяца, \"d\" - цифра дня\n");
+            Console.WriteLine("\n\t==\t==\t==\t==\t==\t==\n");
+            Console.Write("\t\t");
+            Console.WriteLine("Модель \"Место\"\nСостоит из:\n\t1. Названия страны\n\t2. Названия города\n\t3. Названия улицы\n\t4. Названия дома\n");
+            Console.WriteLine("\n\t==\t==\t==\t==\t==\t==\n");
+            Console.Write("Нажимте любую клавишу для продолжения...");
+            Console.ReadKey();
+            Console.Clear();
+            StartProgramClass.Main();
         }
     }
 }

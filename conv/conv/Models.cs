@@ -22,11 +22,14 @@ namespace conv
         public string house { set; get; }
 
         /// <summary>
-        /// метод преобразования данных в строку для записи в файл/вывода
+        /// метод преобразования данных в строку для вывода/сортировки
         /// </summary>
-        public void PrintData()
+        /// <returns>
+        /// cтрока данных
+        /// </returns>
+        public string PrintData()
         {
-            Console.WriteLine($"{country} {city} {street} {house}");
+            return $"{country}\t{city}\t{street}\t{house}";
         }
     }
 
@@ -40,11 +43,14 @@ namespace conv
         public string dataReilese{set; get; }
 
         /// <summary>
-        /// метод преобразования данных в строку для записи в файл/вывода
+        /// метод преобразования данных в строку для вывода/сортировки
         /// </summary>
-        public void PrintData()
+        /// <returns>
+        /// cтрока данных
+        /// </returns>
+        public string PrintData()
         {
-            Console.WriteLine($"{title} {versoin} {dataReilese}");
+            return $"{title}\t{versoin}\t{dataReilese}";
         }
 
         /// <summary>
